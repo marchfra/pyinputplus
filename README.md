@@ -1,5 +1,7 @@
-PyInputPlus
-===========
+# PyInputPlus
+
+> [!NOTE]
+> This repository is a maintained fork of the original [PyInputPlus](https://github.com/asweigart/pyinputplus.git) project by [Al Sweigart](https://github.com/asweigart).
 
 A Python 2 and 3 module to provide input()- and raw_input()-like functions with additional validation features, including:
 
@@ -11,72 +13,73 @@ A Python 2 and 3 module to provide input()- and raw_input()-like functions with 
 * Presenting menus with bulleted, lettered, or numbered options.
 * Allowing case-sensitive or case-insensitive responses.
 
-Installation
-------------
+## Installation
 
-    pip install pyinputplus
+```shell
+pip install pyinputplus
+```
 
-Example Usage
--------------
+## Example Usage
 
-    >>> import pyinputplus as pyip
-    >>> result = pyip.inputStr()
+```python
+>>> import pyinputplus as pyip
+>>> result = pyip.inputStr()
 
-    Blank values are not allowed.
-    Hello
-    >>> result
-    'Hello'
+Blank values are not allowed.
+Hello
+>>> result
+'Hello'
 
-    >>> result = pyip.inputNum()
-    forty two
-    'forty two' is not a number.
-    42
-    >>> result
-    42
+>>> result = pyip.inputNum()
+forty two
+'forty two' is not a number.
+42
+>>> result
+42
 
-    >>> result = pyip.inputNum(min=4, max=6)
-    3
-    Input must be at minimum 4.
-    7
-    Input must be at maximum 6.
-    4
-    >>> result
-    4
+>>> result = pyip.inputNum(min=4, max=6)
+3
+Input must be at minimum 4.
+7
+Input must be at maximum 6.
+4
+>>> result
+4
 
-    >>> result = pyip.inputNum(greaterThan=4, lessThan=6)
-    4
-    Input must be greater than 4.
-    4.1
-    >>> result
-    4.1
+>>> result = pyip.inputNum(greaterThan=4, lessThan=6)
+4
+Input must be greater than 4.
+4.1
+>>> result
+4.1
 
-    >>> result = pyip.inputStr('Favorite animal> ', blacklistRegexes=['moose'])
-    Favorite animal> moose
-    This response is invalid.
-    Favorite animal> cat
-    >>> result
-    'cat'
+>>> result = pyip.inputStr('Favorite animal> ', blacklistRegexes=['moose'])
+Favorite animal> moose
+This response is invalid.
+Favorite animal> cat
+>>> result
+'cat'
 
-    >>> result = inputMenu(['dog', 'cat', 'moose'])
-    Please select one of the following:
-    * dog
-    * cat
-    * moose
-    DoG
-    >>> result
-    'dog'
+>>> result = inputMenu(['dog', 'cat', 'moose'])
+Please select one of the following:
+* dog
+* cat
+* moose
+DoG
+>>> result
+'dog'
 
-    >>> result = inputMenu(['dog', 'cat', 'moose'], lettered=True, numbered=False)
-    Please select one of the following:
-    A. dog
-    B. cat
-    C. moose
-    b
-    >>> result
-    'cat'
+>>> result = inputMenu(['dog', 'cat', 'moose'], lettered=True, numbered=False)
+Please select one of the following:
+A. dog
+B. cat
+C. moose
+b
+>>> result
+'cat'
+```
 
-Common Input Function Parameters
---------------------------------
+## Common Input Function Parameters
 
 All input functions have the following parameters:
 
@@ -94,8 +97,7 @@ All input functions have the following parameters:
 
 Other input functions may have additional parameters.
 
-Input Functions
----------------
+## Input Functions
 
 * `inputStr()` - Accepts a string. Use this if you basically want Python's `input()` or `raw_input()`, but with PyInputPlus features such as whitelist/blacklist, timeouts, limits, etc.
 * `inputNum()` - Accepts a numeric number. Additionally has `min` and `max` parameters for inclusive bounds and `greaterThan` and `lessThan` parameters for exclusive bounds. Returns an int or float, not a str.
@@ -109,7 +111,6 @@ Input Functions
 * `inputTime()` - Same as `inputDate()`, except it handles times. (This has several common formats by default.) Returns a `datetime.time` object.
 * `inputYesNo()` - Accepts a case-insensitive form of `'Yes'`, `'Y'`, `'No'`, or `'N'` and returns `'yes'` or `'no'`.
 
-Support
--------
+## Support
 
 If you find this project helpful and would like to support its development, [consider donating to its creator on Patreon](https://www.patreon.com/AlSweigart).
