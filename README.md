@@ -3,6 +3,9 @@
 > [!NOTE]
 > This repository is a maintained fork of the original [PyInputPlus](https://github.com/asweigart/pyinputplus.git) project by [Al Sweigart](https://github.com/asweigart).
 
+> [!WARNING]
+> Since the project is in active development, this README may not always reflect the latest changes. Please refer to the [Changelog](CHANGELOG.md) for the most recent updates.
+
 A Python 2 and 3 module to provide input()- and raw_input()-like functions with additional validation features, including:
 
 * Re-prompting the user if they enter invalid input.
